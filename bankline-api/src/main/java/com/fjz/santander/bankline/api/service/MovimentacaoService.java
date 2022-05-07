@@ -22,7 +22,7 @@ public class MovimentacaoService {
         Double valor = novaMovimentacao.getTipo()== MovimentacaoTipo.RECEITA? novaMovimentacao.getValor():novaMovimentacao.getValor()*-1;
         movimentacao.setDataHora(LocalDateTime.now());
         movimentacao.setDescricao(novaMovimentacao.getDescricao());
-        movimentacao.setId(novaMovimentacao.getIdConta());
+        movimentacao.setIdConta(novaMovimentacao.getIdConta());
         movimentacao.setTipo(novaMovimentacao.getTipo());
         movimentacao.setValor(valor);
         Correntista correntista = correntistaRepository.findById(novaMovimentacao.getIdConta()).orElse(null);

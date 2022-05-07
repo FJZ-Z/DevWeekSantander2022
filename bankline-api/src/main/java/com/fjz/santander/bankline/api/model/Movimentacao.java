@@ -1,7 +1,8 @@
 package com.fjz.santander.bankline.api.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -11,6 +12,7 @@ public class Movimentacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "data_hora")
     private LocalDateTime dataHora;
     private String descricao;
